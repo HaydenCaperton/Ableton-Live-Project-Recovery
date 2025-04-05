@@ -1,5 +1,4 @@
 import os
-import datetime
 
 def scan_for_als_files(directory):
     """Scan a directory for .als files."""

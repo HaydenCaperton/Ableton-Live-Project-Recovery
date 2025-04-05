@@ -1,0 +1,7 @@
+# Project Dependencies
+# --------------------
+# Install with: pip install -r requirements.txt
+# See README.md for detailed installation instructions.
+
+# Script 5 - Dependencies
+tqdm>=4.66.0  

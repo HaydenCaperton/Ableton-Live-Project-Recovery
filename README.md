@@ -6,6 +6,12 @@ This project contains a collection of Python scripts designed to help locate and
 
 There are five main scripts in this collection, each building upon the previous one or offering different capabilities:
 
+* **`recover_als_files.py`**: Basic `.als` scan by extension.
+* **`recover_als_files2.py`**: Adds `.als` header checking.
+* **`recover_als_files3.py`**: Adds keyword search.
+* **`recover_als_files4.py`**: Adds `.alp` support, parallel processing, basic script config.
+* **`recover_als_files5.py`**: Most advanced: Command-line args, progress bar, logging, preserves structure, parallel by default. **Requires `tqdm` library.**
+
 1.  **`recover_als_files.py`**
     * **Functionality:** Performs a basic recursive scan of a specified directory for files ending with the `.als` extension.
     * **Method:** Simple filename matching (`*.als`).
@@ -101,8 +107,25 @@ There are five main scripts in this collection, each building upon the previous 
 
 ## Dependencies
 
-* **Scripts 1-3:** Use only Python standard libraries (`os`). *(Note: Scripts 2 & 3 import `datetime` and `subprocess` but don't use them)*.
+* **Scripts 1-3:** Use only Python standard libraries (`os`).
 * **Script 4:** Uses standard libraries (`os`, `multiprocessing`).
 * **Script 5:**
     * Standard Libraries: `os`, `multiprocessing`, `argparse`, `logging`, `shutil`, `pathlib`.
-    * External Library: `tqdm` (for progress bars). Install using: `pip install tqdm`
+    * External Library: `tqdm` (for progress bars). Install using: `pip install tqdm` in the project directory of your terminal.
+
+    
+## Disclaimer - Important!
+These scripts perform low-level operations on your file system and carry inherent risks. While they have been carefully developed and tested with success in my own environment, I strongly advise the following precautions:
+
+1. **Backup First: Always run these scripts on copies of your data— never on original files or the only existing copy.**
+
+2. **Verify Paths: Double-check that scan_directory and output_directory point to separate locations to avoid accidental overwrites.**
+
+3. **Output Directory: Output your recovered files to a drive/directory that is not the same as the scan directory where the project files were originally lost.**
+
+3. **Free Space: Ensure the output_directory has sufficient storage for recovered files.**
+
+4. **No Warranty: The author disclaims all liability for data loss, corruption, or system damage arising from script use and/or misuse.**
+
+By proceeding, you acknowledge full responsibility for any outcomes.
+
